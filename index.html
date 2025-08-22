@@ -228,6 +228,25 @@
     <textarea id="historia"></textarea>
   </section>
 
+  <script>
+    const textarea = document.getElementById('historia');
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto'; // reseta altura antes de calcular
+      textarea.style.height = textarea.scrollHeight + 'px'; // ajusta à altura do conteúdo
+    });
+  </script>
+
+  <style>
+    .history textarea {
+      width: 100%;
+      min-height: 60px;    /* altura inicial */
+      resize: none;        /* evita redimensionamento manual */
+      overflow: hidden;    /* remove barra de rolagem */
+      font-size: 14px;
+      padding: 6px;
+    }
+  </style>
+
   <section class="box" style="margin-top:24px;">
   <h3>Dor muscular extra oral com palpação (1kg)</h3>
   <p class="small">
