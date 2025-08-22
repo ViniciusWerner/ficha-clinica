@@ -86,6 +86,8 @@
     text-transform: uppercase;
     font-size: 0.9rem;
   }
+
+
   .num { width: 70px; text-align: center; }
   .tight { width: 1%; white-space: nowrap; }
   .subhead { background: #f2f2f2; font-weight: 600; text-align: center; }
@@ -112,6 +114,14 @@
     resize: vertical;
     font-size: 1rem;
     padding: 8px;
+  }
+  .history textarea {
+      width: 100%;
+      min-height: 60px;    /* altura inicial */
+      resize: none;        /* evita redimensionamento manual */
+      overflow: hidden;    /* remove barra de rolagem */
+      font-size: 14px;
+      padding: 6px;
   }
 
   @media print {
@@ -237,14 +247,7 @@
   </script>
 
   <style>
-    .history textarea {
-      width: 100%;
-      min-height: 60px;    /* altura inicial */
-      resize: none;        /* evita redimensionamento manual */
-      overflow: hidden;    /* remove barra de rolagem */
-      font-size: 14px;
-      padding: 6px;
-    }
+    
   </style>
 
   <section class="box" style="margin-top:24px;">
@@ -278,86 +281,85 @@
     <tbody>
       <tr>
         <td>Temporal P</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Temporal M</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Temporal A</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Masseter Sup</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Masseter méd</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Masseter inf</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Trapézio</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Esternocleido</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Suboccipitais</td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
-        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
-        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td><td><input type="checkbox" name="tpd" /></td>
+        <td><input type="checkbox" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td><td><input type="checkbox" name="tpe" /></td>
+        <td><input type="checkbox" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
-      <!-- Repita linhas para Temporal M, Temporal A, Masseter Sup, Masseter méd, Masseter inf, Trapézio, Esternocleido, Suboccipitais -->
     </tbody>
   </table>
 </section>
@@ -384,21 +386,21 @@
     <tbody>
       <tr>
         <td>Polo lateral (0,5Kg)</td>
-        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
-        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
-        <td><input type="radio" name="pld" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
       <tr>
         <td>Ao redor (1Kg)</td>
-        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
-        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
-        <td><input type="radio" name="pld" /></td><td><input type="text" class="inline-input" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
-        <td><input type="radio" name="ple" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td><td><input type="checkbox" name="pld" /></td>
+        <td><input type="checkbox" name="pld" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td><td><input type="checkbox" name="ple" /></td>
+        <td><input type="checkbox" name="ple" /></td><td><input type="text" class="inline-input" /></td>
       </tr>
     </tbody>
   </table>
@@ -445,8 +447,389 @@
   </p>
 </section>
 
+<!-- HISTÓRIA MÉDICA -->
+<section class="medical-history">
+  <h2>História Médica</h2>
+  <table class="history-table">
+    <tr>
+      <td>
+        <strong>Tratamento atual:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. infecciosas-contagiosas:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Medicamentos:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. Respiratórias:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Alergias:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. Cardio-circulatórias:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>S. Sensorial:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. Neuropsiquiátrica:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Tabagismo – Etilismo – Droga adicto:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. Gastro-intestinal:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>D. Músculo – esquelética:</strong><br>
+        <textarea></textarea>
+      </td>
+      <td>
+        <strong>D. Genito-urinária:</strong><br>
+        <textarea></textarea>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<!-- Observações da história médica -->
+<section class="observations">
+  <label for="obs-historia">Observações da história Médica:</label>
+  <textarea id="obs-historia"></textarea>
+</section>
+
+<!-- EXAME CERVICAL FUNCIONAL + PALPAÇÃO DA CADEIA -->
+<div class="tables-side-by-side">
+  <!-- Exame Cervical Funcional -->
+  <section class="cervical-exam">
+    <h3>Exame Cervical Funcional</h3>
+    <table>
+      <tr>
+        <th>Movimento</th>
+        <th>Dor (local)</th>
+        <th>Restrição</th>
+        <th>Sem Restrição</th>
+      </tr>
+      <tr>
+        <td>Flexão</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Extensão</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Rotação D (70º)</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Rotação E (70º)</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Incl. Lateral D (60º)</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td>Incl. Lateral E (60º)</td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Palpação da cadeia linfática cervical -->
+  <section class="lymph-exam">
+    <h3>Palpação da cadeia linfática cervical</h3>
+    <table>
+      <tr><td>Região sublingual: <input type="checkbox"> aparentemente normal</td></tr>
+      <tr><td>Região submandibular: <input type="checkbox"> aparentemente normal</td></tr>
+      <tr><td>Região júgulo-carotídea alta: <input type="checkbox"> aparentemente normal</td></tr>
+      <tr><td>Região júgulo-carotídea média: <input type="checkbox"> aparentemente normal</td></tr>
+      <tr><td>Região júgulo-carotídea baixa: <input type="checkbox"> aparentemente normal</td></tr>
+      <tr><td>Região supraclavicular: <input type="checkbox"> aparentemente normal</td></tr>
+    </table>
+  </section>
+</div>
+
+<!-- Oroscopia -->
+<section class="oroscopia">
+  <h3>Oroscopia (inspeção e palpação)</h3>
+  <table>
+    <tr><td>Lábios: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Mucosa jugal: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Língua: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Soalho da boca: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Palato duro: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Palato mole: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Gengiva: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Área retromolar: <input type="checkbox"> aparentemente normal</td></tr>
+    <tr><td>Drenagem de glândulas salivares (parótida, submandibular e sublingual): <input type="checkbox"> aparentemente normal</td></tr>
+  </table>
+</section>
+
+<!-- SCRIPT para autoexpansão de todas as textareas -->
+<script>
+  document.querySelectorAll('textarea').forEach(textarea => {
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    });
+  });
+</script>
+
+<!-- CSS básico Para PÁGINA 3 (HISTÓRIA MÉDICA até SCRIPT para autoexpansão de todas as textareas)-->
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  td, th {
+    border: 1px solid #000;
+    padding: 4px;
+    vertical-align: top;
+  }
+  textarea {
+    width: 100%;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+  }
+  .observations textarea {
+    width: 100%;
+    min-height: 60px;
+  }
+  .tables-side-by-side {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .tables-side-by-side section {
+    flex: 1;
+  }
+</style>
+
+
+
+<!-- HIPÓTESE DIAGNÓSTICA -->
+<section class="hipotese-diagnostica">
+  <h2>Hipótese Diagnóstica (SINDRÔMICA, TOPOGRÁFICA, FATORES DE RISCO)</h2>
+  <hr>
+  <textarea></textarea>
+  
+  <h3>Condutas de investigação e/ou confirmação diagnósticas:</h3>
+  <label>Exames Complementares:</label>
+  <textarea></textarea>
+  
+  <label>Confirmação Diagnóstica:</label>
+  <textarea></textarea>
+  <hr>
+</section>
+
+<!-- TABELA DIAGNÓSTICO / HÁBITOS DE SONO -->
+<div class="tables-side-by-side">
+  <!-- Diagnóstico -->
+  <section class="diagnostico-table">
+    <table>
+      <tr>
+        <th></th>
+        <th>D</th>
+        <th>E</th>
+        <th>B</th>
+      </tr>
+
+      <tr>
+        <td><label><input type="checkbox"> Sem Classificação</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Mialgia</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Mialgia Local</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Dor miofascial com espalhamento</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Dor miofascial com dor referida</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Cefaleia atribuída a DTM</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> DDCR</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> DDCR, com travamento intermitente</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> DDSR, com limitação de abertura bucal</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> DDSR, sem limitação de abertura bucal</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Doenças Degenerativas</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Subluxação (HIPERMOBILIDADE)</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+      <tr>
+        <td><label><input type="checkbox"> Artralgia</label></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+        <td><input type="checkbox"></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Hábitos de Sono -->
+  <section class="habitos-sono">
+    <h3>Hábitos de Sono</h3>
+    <label>1. Durante a semana, DOM a QUI, que horas você costuma ir dormir?</label>
+    <textarea></textarea>
+    
+    <label>2. Durante a semana, que horas você costuma acordar de SEG a SEX?</label>
+    <textarea></textarea>
+    
+    <label>3. Nos fins de semana de SEX a SÁB, que horas você costuma ir dormir?</label>
+    <textarea></textarea>
+    
+    <label>4. No fim de semana, aos SÁB e DOM, a que horas você costuma acordar?</label>
+    <textarea></textarea>
+  </section>
+</div>
+
+<!-- CAMPOS FINAIS -->
+<section class="assinaturas">
+  <p>Maceió, <input type="text" style="width:100px;"> de <input type="text" style="width:120px;"> de 202<input type="text" style="width:40px;"></p>
+  
+  <div style="margin-top:30px;">
+    <hr style="width:300px; margin-left:0;">
+    <p>Assinatura Paciente</p>
+  </div>
+  
+  <div style="margin-top:30px;">
+    <hr style="width:300px; margin-left:0;">
+    <p>Assinatura do Profissional</p>
+  </div>
+</section>
+
+<!-- SCRIPT para autoexpansão de todas as textareas -->
+<script>
+  document.querySelectorAll('textarea').forEach(textarea => {
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    });
+  });
+</script>
+
+<!-- CSS adicional para PÁGINA 4 (HIPÓTESE DIAGNÓSTICA até SCRIPT para autoexpansão de todas as textareas) -->
+<style>
+  textarea {
+    width: 100%;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  hr {
+    border: none;
+    border-top: 1px dashed #000;
+    margin: 15px 0;
+  }
+  .tables-side-by-side {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .tables-side-by-side section {
+    flex: 1;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+  }
+  td, th {
+    border: 1px solid #000;
+    padding: 4px;
+    vertical-align: top;
+  }
+</style>
 
   
-  
+
 </body>
 </html>
