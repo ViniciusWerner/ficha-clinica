@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulário – Avaliação</title>
+<style>
+  :root {
+    --gap: 16px;
+    --border: 1px solid #222;
+    --soft: #f7f7f7;
+    --muted: #666;
+    --title: #000;
+    --radius: 10px;
+    --pad: 12px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    margin: 24px;
+    color: #111;
+    line-height: 1.25;
+  }
+  label { font-weight: 600; }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+  }
+  .row-3 {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+  }
+  .input-line {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    font-size: 1rem;
+    padding: 2px 4px;
+  }
+  .inline-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 1rem;
+    padding: 2px 4px;
+    width: 60px;
+    text-align: center;
+  }
+  .box {
+    border: var(--border);
+    border-radius: var(--radius);
+    padding: var(--pad);
+    background: white;
+  }
+  .soft {
+    background: var(--soft);
+  }
+  .images-area {
+    border: 2px dashed #999;
+    border-radius: var(--radius);
+    padding: 24px;
+    min-height: 140px;
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  th, td {
+    border: var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    background: #efefef;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+  .num { width: 70px; text-align: center; }
+  .tight { width: 1%; white-space: nowrap; }
+  .subhead { background: #f2f2f2; font-weight: 600; text-align: center; }
+  .small { font-size: 0.92rem; color: var(--muted); }
+  .history {
+    position: relative;
+    border: 2px solid #000;
+    border-radius: var(--radius);
+    padding: 18px;
+    background: white;
+  }
+  .history label {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    background: white;
+    padding: 0 8px;
+    font-weight: 700;
+  }
+  .history textarea {
+    width: 100%;
+    height: 150px;
+    border: none;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  @media print {
+    body { margin: 12mm; }
+    .images-area { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Cabeçalho: Nome e Data lado a lado -->
+  <section class="box" style="margin-bottom: var(--gap);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+      <label for="nome">NOME:</label>
+      <input type="text" id="nome" class="input-line" style="flex:1;" />
+      <label for="data">DATA DO EXAME:</label>
+      <input type="text" maxlength="2" class="inline-input" /> /
+      <input type="text" maxlength="2" class="inline-input" /> /
+      <input type="text" maxlength="4" class="inline-input" />
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <label for="queixa">Queixa principal:</label>
+      <input type="text" id="queixa" class="input-line" style="flex:1;" />
+    </div>
+  </section>
+
+  <!-- Desenho da dor / imagens -->
+  <section class="box soft" style="margin-bottom: var(--gap);">
+    <h3>DESENHO DA DOR / DESCONFORTO</h3>
+    <div class="images-area">ESPAÇO PARA COLOCAR IMAGENS</div>
+  </section>
+
+  <!-- Seções 1 e 2 lado a lado -->
+  <section class="row" style="margin-bottom: var(--gap);">
+    <!-- 1. Padrão de abertura (tabela) -->
+    <div class="box">
+      <h3>1. Padrão de abertura</h3>
+      <table aria-label="Padrão de abertura">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th class="num">Código</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reto</td><td class="num">0</td></tr>
+          <tr><td>Desvio lateral direito (não corrigido)</td><td class="num">1</td></tr>
+          <tr><td>Desvio lateral direito corrigido (“S”)</td><td class="num">2</td></tr>
+          <tr><td>Desvio lateral esquerdo (não corrigido)</td><td class="num">3</td></tr>
+          <tr><td>Desvio lateral esquerdo corrigido</td><td class="num">4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. Extensão do Movimento vertical -->
+    <div class="box">
+      <h3>2. Extensão do Movimento vertical</h3>
+      <div style="margin-bottom: 10px;">
+        Dente sup. (<input type="text" class="inline-input" />)
+        &nbsp;&nbsp;
+        inf. (<input type="text" class="inline-input" />)
+      </div>
+      <div>A. Abertura sem auxílio e sem dor <input type="text" class="inline-input" /> mm</div><br/>
+      <div>B. Abertura máxima sem auxílio <input type="text" class="inline-input" /> mm</div><br/>
+      <div>C. Abertura máxima com auxílio <input type="text" class="inline-input" /> mm</div><br/>
+      <div>D. Trespasse vertical <input type="text" class="inline-input" /> mm</div>
+    </div>
+  </section>
+
+  <!-- 3. Ruídos Articulares (abaixo da 1) com quadro à direita -->
+  <section class="row-3" style="margin-bottom: var(--gap);">
+    <div class="box">
+      <h3>3. Ruídos Articulares</h3>
+      <table aria-label="Ruídos Articulares">
+        <thead>
+          <tr>
+            <th rowspan="2">—</th>
+            <th class="subhead" colspan="2">Abertura</th>
+            <th class="subhead" colspan="2">Fechamento</th>
+          </tr>
+          <tr>
+            <th class="tight">Dir.</th>
+            <th class="tight">Esq.</th>
+            <th class="tight">Dir.</th>
+            <th class="tight">Esq.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Nenhum</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td>Estalido</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td></tr>
+          <tr><td>Dor familiar</td><td class="num">2</td><td class="num">2</td><td class="num">2</td><td class="num">2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quadro à direita da tabela 3 -->
+    <div class="box">
+      <h3 style="margin-bottom: 6px;">Estalido eliminado na abertura PROTRUSIVA?</h3>
+      <table aria-label="Protrusiva">
+        <thead>
+          <tr><th></th><th class="tight">Direito</th><th class="tight">Esquerdo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SIM</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td>NÃO</td><td class="num">1</td><td class="num">1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- História da Dor -->
+  <section class="history">
+    <label for="historia">História da Dor:</label>
+    <textarea id="historia"></textarea>
+  </section>
+
+  <section class="box" style="margin-top:24px;">
+  <h3>Dor muscular extra oral com palpação (1kg)</h3>
+  <p class="small">
+    0 – Sem dor &nbsp;&nbsp; 1 – Com dor &nbsp;&nbsp; 2 – Dor familiar &nbsp;&nbsp; 
+    3 – Gera dor de cabeça &nbsp;&nbsp; 4 – Dor que expande 
+    <input type="text" class="inline-input" style="width:120px;" /> 
+    &nbsp;&nbsp; 5 – Dor familiar que expande 
+    <input type="text" class="inline-input" style="width:120px;" /> 
+    &nbsp;&nbsp; 6 – Dor familiar que expande para a cabeça
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>—</th>
+        <th colspan="8" class="subhead">Direito</th>
+        <th colspan="8" class="subhead">Esquerdo</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th class="tight">0</th><th class="tight">1</th><th class="tight">2</th>
+        <th class="tight">3</th><th class="tight">4</th><th class="tight">5</th>
+        <th class="tight">6</th><th class="tight">Obs</th>
+        <th class="tight">0</th><th class="tight">1</th><th class="tight">2</th>
+        <th class="tight">3</th><th class="tight">4</th><th class="tight">5</th>
+        <th class="tight">6</th><th class="tight">Obs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Temporal P</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Temporal M</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Temporal A</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Masseter Sup</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Masseter méd</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Masseter inf</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Trapézio</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Esternocleido</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Suboccipitais</td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td><td><input type="radio" name="tpd" /></td>
+        <td><input type="radio" name="tpd" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td><td><input type="radio" name="tpe" /></td>
+        <td><input type="radio" name="tpe" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <!-- Repita linhas para Temporal M, Temporal A, Masseter Sup, Masseter méd, Masseter inf, Trapézio, Esternocleido, Suboccipitais -->
+    </tbody>
+  </table>
+</section>
+
+<section class="box" style="margin-top:24px;">
+  <h3>Dor articular com palpação</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>—</th>
+        <th colspan="8" class="subhead">Direito</th>
+        <th colspan="8" class="subhead">Esquerdo</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th class="tight">0</th><th class="tight">1</th><th class="tight">2</th>
+        <th class="tight">3</th><th class="tight">4</th><th class="tight">5</th>
+        <th class="tight">6</th><th class="tight">Obs</th>
+        <th class="tight">0</th><th class="tight">1</th><th class="tight">2</th>
+        <th class="tight">3</th><th class="tight">4</th><th class="tight">5</th>
+        <th class="tight">6</th><th class="tight">Obs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Polo lateral (0,5Kg)</td>
+        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
+        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
+        <td><input type="radio" name="pld" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+      <tr>
+        <td>Ao redor (1Kg)</td>
+        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
+        <td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td><td><input type="radio" name="pld" /></td>
+        <td><input type="radio" name="pld" /></td><td><input type="text" class="inline-input" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td><td><input type="radio" name="ple" /></td>
+        <td><input type="radio" name="ple" /></td><td><input type="text" class="inline-input" /></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="box" style="margin-top:24px;">
+  <h3>Testes de Provocação</h3>
+  <hr style="margin:12px 0;border:1px solid #000;">
+  <p>Muscular (Fadiga) – (até 1 min)</p>
+  <p>
+    Lado Direito 
+    (<input type="checkbox">) Não 
+    (<input type="checkbox">) Direita Local <input type="text" class="inline-input" style="width:160px;">
+    (<input type="checkbox">) Esquerda Local <input type="text" class="inline-input" style="width:160px;">
+  </p>
+  <p>
+    Lado Esquerdo 
+    (<input type="checkbox">) Não 
+    (<input type="checkbox">) Direita Local <input type="text" class="inline-input" style="width:160px;">
+    (<input type="checkbox">) Esquerda Local <input type="text" class="inline-input" style="width:160px;">
+  </p>
+  <p>Articular – (até 15 segundos)</p>
+  <p>
+    Lado Direito 
+    (<input type="checkbox">) Não 
+    (<input type="checkbox">) Direita Local <input type="text" class="inline-input" style="width:160px;">
+    (<input type="checkbox">) Esquerda Local <input type="text" class="inline-input" style="width:160px;">
+  </p>
+  <p>
+    Contra-teste (Lado esquerdo) Alívio 
+    (<input type="checkbox">) Sim 
+    (<input type="checkbox">) Não
+  </p>
+  <p>
+    Lado Esquerdo 
+    (<input type="checkbox">) Não 
+    (<input type="checkbox">) Direita Local <input type="text" class="inline-input" style="width:160px;">
+    (<input type="checkbox">) Esquerda Local <input type="text" class="inline-input" style="width:160px;">
+  </p>
+  <p>
+    Contra-teste (Lado direito) Alívio 
+    (<input type="checkbox">) Sim 
+    (<input type="checkbox">) Não
+  </p>
+</section>
+
+
+  
+  
+</body>
+</html>
